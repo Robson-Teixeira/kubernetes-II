@@ -9,3 +9,4 @@
 - `kubectl apply -f <nome-arquivo>.yaml/.json --record` aplica arquivo para criar POD de maneira declarativa, armazenando comando no histórico de alterações do Deployment
 - `kubectl annotate deployment <nome-deployment> kubernetes.io/change-cause="<mensagem>"` anota alterações no histórico
 - `kubectl rollout undo deployment <nome-deployment> --to-revison=<sequencial-revisão>` altera Deployment para versão especificada sem necessidade de alterar arquivo .yaml/.json
+- `kubectl delete deployment <nome-deployment>` deleta Deployment especificado
