@@ -18,4 +18,4 @@ spec:
     - name: primeiro-volume
       hostPath:
         path: /C/Kubernetes/kubernetes-II/primeiro-volume
-        type: Directory
+        type: Directory # DirectoryOrCreate para criar caso não exista

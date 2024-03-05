@@ -2,6 +2,8 @@
 - ReplicaSet pode encapsular/gerenciar (recriando POD's que pararam de funcionar, por exemplo) 1 ou mais POD's
 - Deployment encapsula o ReplicaSet e permite o versionamento de imagens e POD's. Por meio de comandos extras é possível validar/verificar fluxo
 - Volume possui ciclo de vida independente dos containers, mas é dependente do POD
+    >No Windows, desativar `Use the WSL 2 based engine` e adicionar diretório do host em `Resources > File sharing`
+    No Linux, acessar Minikube usando `minikube ssh` e criar estrutura de diretório (se necessário, usar o `sudo`)
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
