@@ -4,10 +4,14 @@
 - Volume possui ciclo de vida independente dos containers, mas é dependente do POD
     >No Windows, desativar `Use the WSL 2 based engine` e adicionar diretório do host em `Resources > File sharing`
     No Linux, acessar Minikube usando `minikube ssh` e criar estrutura de diretório (se necessário, usar o `sudo`)
+    No Google Cloud, criar um disco para futuros apontamentos
+- PersistentVolumes possuem ciclo de vida independente dos containers e POD's
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
 - `kubectl get deployments` lista Deployments
+- `kubectl get pv` lista PersistentVolumes
+- `kubectl get pvc` lista PersistentVolumeClaims
 - `kubectl rollout history deployment <nome-deployment>` lista histórico de alterações
 - `kubectl apply -f <nome-arquivo>.yaml/.json --record` aplica arquivo para criar POD de maneira declarativa, armazenando comando no histórico de alterações do Deployment
 - `kubectl annotate deployment <nome-deployment> kubernetes.io/change-cause="<mensagem>"` anota alterações no histórico
