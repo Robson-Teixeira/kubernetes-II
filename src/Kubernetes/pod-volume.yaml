@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-volume
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      volumeMounts:
+        - mountPath: /volume-container # diretório dentro do container
+          name: primeiro-volume # volume de destino do diretório
+    - name: jenkins-container
+      image: jenkins:alpine
+      volumeMounts:
+        - mountPath: /volume-container
+          name: primeiro-volume      
+  volumes:
+    - name: primeiro-volume
+      hostPath:
+        path: /C/Kubernetes/kubernetes-II/primeiro-volume
+        type: Directory
