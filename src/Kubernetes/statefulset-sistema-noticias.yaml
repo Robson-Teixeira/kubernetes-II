@@ -17,6 +17,18 @@ spec:
           envFrom:
             - configMapRef:
                 name: cm-sistema-noticias
+          volumeMounts:
+            - name: imagens
+              mountPath: /var/www/html/uploads
+            - name: sessao
+              mountPath: /tmp
+      volumes:
+        - name: imagens
+          persistentVolumeClaim:
+            claimName: pvc-imagens
+        - name: sessao
+          persistentVolumeClaim:
+            claimName: pvc-sessao            
   replicas: 1
   selector:
     matchLabels:

@@ -8,6 +8,7 @@
 - PersistentVolumes possuem ciclo de vida independente dos containers e POD's
 - PersistentVolumeClaim é necessário para acessar um PersistentVolume e/ou StorageClass
 - StorageClass gerencia discos e Volumes, possibilitando a criação de PersistentVolumes e discos de maneira dinâmica (conforme necessidade do cluster) assim que um PersistentVolumeClaim é vinculado em um StorageClass
+    >Por padrão existe localmente o hostpath que já criará um PersistentVolume de maneira automática caso seja criado um PersistentVolumeClaim.
 - StatefulSet gerencia POD's mantendo uma identificação única para cada um e em caso de falha, o novo POD recebe a mesma identificação do anterior. Usam PersistentVolumes e PersistentVolumeClaims para persistência de dados
 
 ## Comandos
