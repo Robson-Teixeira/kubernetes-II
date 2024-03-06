@@ -6,12 +6,15 @@
     No Linux, acessar Minikube usando `minikube ssh` e criar estrutura de diretório (se necessário, usar o `sudo`)
     No Google Cloud, criar um disco para futuros apontamentos
 - PersistentVolumes possuem ciclo de vida independente dos containers e POD's
+- PersistentVolumeClaim é necessário para acessar um PersistentVolume e/ou StorageClass
+- StorageClass gerencia discos e Volumes, possibilitando a criação de PersistentVolumes e discos de maneira dinâmica (conforme necessidade do cluster) assim que um PersistentVolumeClaim é vinculado em um StorageClass
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
 - `kubectl get deployments` lista Deployments
 - `kubectl get pv` lista PersistentVolumes
 - `kubectl get pvc` lista PersistentVolumeClaims
+- `kubectl get sc` lista Storage Classes
 - `kubectl rollout history deployment <nome-deployment>` lista histórico de alterações
 - `kubectl apply -f <nome-arquivo>.yaml/.json --record` aplica arquivo para criar POD de maneira declarativa, armazenando comando no histórico de alterações do Deployment
 - `kubectl annotate deployment <nome-deployment> kubernetes.io/change-cause="<mensagem>"` anota alterações no histórico
