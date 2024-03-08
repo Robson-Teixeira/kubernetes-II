@@ -1,0 +1,18 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-portal-noticias
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: deployment-portal-noticias
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: Resource # baseado nos recursos
+      resource:
+        name: cpu # do tipo cpu
+        target:
+          type: Utilization # quando a utilização atingir
+          averageUtilization: 50 # 50%, então, 1 nova réplica será criada

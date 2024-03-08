@@ -31,6 +31,9 @@ spec:
             periodSeconds: 10
             failureThreshold: 5 # número de falhas antes de retomar o envio de requisições ao container
             initialDelaySeconds: 3 # após início do POD e subida do container
+          resources:
+            requests:
+              cpu: 10m
   replicas: 3
   selector:
     matchLabels:

@@ -14,6 +14,7 @@
     - Liveness (prova de vida) para validar se a aplicação dentro do POD está de pé e saber quando reiniciar o container. Status >= 200 e < 400 indicam sucesso.
     - Readiness para validar se a aplicação e POD estão prontos para receber requisições
     - Startup é utilizado principalmente em aplicações legadas que levam mais tempo para inicializar de modo que Liveness ou Readiness não conseguem resolver
+- HorizontalPodAutescaler escala automaticamente o número de POD's baseado no uso de CPU
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
@@ -22,6 +23,8 @@
 - `kubectl get pvc` lista PersistentVolumeClaims
 - `kubectl get sc` lista Storage Classes
 - `kubectl get statefulset` lista StatefulSets
+- `kubectl get horizontalpodautoscaler` ou `kubectl get hpa` lista HorizontalPodAutoscalers
+- `kubectl describe horizontalpodautoscaler <nome-hpa>` ou `kubectl describe hpa <nome-hpa>` detalhes do HorizontalPodAutoscaler
 - `kubectl rollout history deployment <nome-deployment>` lista histórico de alterações
 - `kubectl apply -f <nome-arquivo>.yaml/.json --record` aplica arquivo para criar POD de maneira declarativa, armazenando comando no histórico de alterações do Deployment
 - `kubectl annotate deployment <nome-deployment> kubernetes.io/change-cause="<mensagem>"` anota alterações no histórico
