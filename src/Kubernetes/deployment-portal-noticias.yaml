@@ -17,6 +17,13 @@ spec:
           envFrom:
             - configMapRef:
                 name: cm-portal-noticias
+          livenessProbe:
+            httpGet:
+              path: / # página inicial (nesse caso)
+              port: 80 # porta do container
+            periodSeconds: 10 # periodicidade do teste
+            failureThreshold: 3 # número de falhas antes de reiniciar o container 
+            initialDelaySeconds: 20 # após 20 segundos de subir o container
   replicas: 3
   selector:
     matchLabels:
