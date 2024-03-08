@@ -24,6 +24,13 @@ spec:
             periodSeconds: 10 # periodicidade do teste
             failureThreshold: 3 # número de falhas antes de reiniciar o container 
             initialDelaySeconds: 20 # após 20 segundos de subir o container
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            failureThreshold: 5 # número de falhas antes de retomar o envio de requisições ao container
+            initialDelaySeconds: 3 # após início do POD e subida do container
   replicas: 3
   selector:
     matchLabels:

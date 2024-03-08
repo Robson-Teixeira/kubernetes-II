@@ -11,7 +11,8 @@
     >Por padrão existe localmente o hostpath que já criará um PersistentVolume de maneira automática caso seja criado um PersistentVolumeClaim.
 - StatefulSet gerencia POD's mantendo uma identificação única para cada um e em caso de falha, o novo POD recebe a mesma identificação do anterior. Usam PersistentVolumes e PersistentVolumeClaims para persistência de dados
 - Probes são verificações de integridade (bem-estar) das aplicações e dos POD's que às hospedam
-    - Liveness (prova de vida) para validar se a aplicação dentro do POD está de pé e saber quando reiniciar o container
+    - Liveness (prova de vida) para validar se a aplicação dentro do POD está de pé e saber quando reiniciar o container. Status >= 200 e < 400 indicam sucesso.
+    - Readiness para validar se a aplicação e POD estão prontos para receber requisições
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
@@ -19,6 +20,7 @@
 - `kubectl get pv` lista PersistentVolumes
 - `kubectl get pvc` lista PersistentVolumeClaims
 - `kubectl get sc` lista Storage Classes
+- `kubectl get statefulset` lista StatefulSets
 - `kubectl rollout history deployment <nome-deployment>` lista histórico de alterações
 - `kubectl apply -f <nome-arquivo>.yaml/.json --record` aplica arquivo para criar POD de maneira declarativa, armazenando comando no histórico de alterações do Deployment
 - `kubectl annotate deployment <nome-deployment> kubernetes.io/change-cause="<mensagem>"` anota alterações no histórico
