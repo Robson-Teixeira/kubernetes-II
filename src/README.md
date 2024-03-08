@@ -13,6 +13,7 @@
 - Probes são verificações de integridade (bem-estar) das aplicações e dos POD's que às hospedam
     - Liveness (prova de vida) para validar se a aplicação dentro do POD está de pé e saber quando reiniciar o container. Status >= 200 e < 400 indicam sucesso.
     - Readiness para validar se a aplicação e POD estão prontos para receber requisições
+    - Startup é utilizado principalmente em aplicações legadas que levam mais tempo para inicializar de modo que Liveness ou Readiness não conseguem resolver
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
