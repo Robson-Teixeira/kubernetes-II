@@ -15,6 +15,9 @@
     - Readiness para validar se a aplicação e POD estão prontos para receber requisições
     - Startup é utilizado principalmente em aplicações legadas que levam mais tempo para inicializar de modo que Liveness ou Readiness não conseguem resolver
 - HorizontalPodAutescaler escala automaticamente o número de POD's baseado no uso de CPU
+    >Para a correta utilização é necessário ativar o servidor de métricas.
+    No Windows, adicionar via .yaml
+    No Linux, acessar extensões usando `minikube addons list` e ativar com `minikube addons enable metrics-server`
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets

@@ -3,7 +3,7 @@
 
 for i in {1..10000}; do
 
-    curl localhost:30000
+    curl localhost:30000 # no Linux substituir 'localhost' pelo 'internal-ip' do node
     sleep $1 # intervalo em segundos recebido como parâmetro
 
 done
