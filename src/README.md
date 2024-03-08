@@ -18,6 +18,7 @@
     >Para a correta utilização é necessário ativar o servidor de métricas.
     No Windows, adicionar via .yaml
     No Linux, acessar extensões usando `minikube addons list` e ativar com `minikube addons enable metrics-server`
+- VerticalPodAutoscaler define o consumo de memória e cpu de maneira automática baseado na utilização de cada nó, removendo a necessidade de definir limites para tais recursos
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
