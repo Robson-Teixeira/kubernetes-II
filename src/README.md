@@ -22,13 +22,19 @@
 
 ## Comandos
 - `kubectl get replicaset` ou `kubectl get rs` lista ReplicaSets
-- `kubectl get deployments` lista Deployments
-- `kubectl get pv` lista PersistentVolumes
-- `kubectl get pvc` lista PersistentVolumeClaims
-- `kubectl get sc` lista Storage Classes
-- `kubectl get statefulset` lista StatefulSets
-- `kubectl get horizontalpodautoscaler` ou `kubectl get hpa` lista HorizontalPodAutoscalers
-- `kubectl describe horizontalpodautoscaler <nome-hpa>` ou `kubectl describe hpa <nome-hpa>` detalhes do HorizontalPodAutoscaler
+- `kubectl get deployments` ou `kubectl get deploy` lista Deployments
+- `kubectl get persistentvolume` ou `kubectl get persistentvolumes` ou `kubectl get pv` lista PersistentVolumes
+- `kubectl get persistentvolumeclaim` ou `kubectl get persistentvolumeclaims` ou `kubectl get pvc` lista PersistentVolumeClaims
+- `kubectl get storageclass` ou `kubectl get storageclasses` ou `kubectl get sc` lista Storage Classes
+- `kubectl get statefulset` ou `kubectl get statefulsets` ou `kubectl get sts` lista StatefulSets
+- `kubectl get horizontalpodautoscaler` ou `kubectl get horizontalpodautoscalers` ou `kubectl get hpa` lista HorizontalPodAutoscalers
+- `kubectl describe replicaset <nome-rs>` ou `kubectl describe rs <nome-rs>` detalhes do ReplicaSet
+- `kubectl describe deployments <nome-deploy>` ou `kubectl describe deploy <nome-deploy>` detalhes do Deployment
+- `kubectl describe persistentvolume <nome-pv>` ou `kubectl describe persistentvolumes <nome-pv>` ou `kubectl describe pv <nome-pv>` detalhes do PersistentVolume
+- `kubectl describe persistentvolumeclaim <nome-pvc>` ou `kubectl describe persistentvolumeclaims <nome-pvc>` ou `kubectl describe pvc <nome-pvc>` detalhes do PersistentVolumeClaim
+- `kubectl describe storageclass <nome-sc>` ou `kubectl describe storageclasses <nome-sc>` ou `kubectl describe sc <nome-sc>` detalhes do Storage Classe
+- `kubectl describe statefulset <nome-sts>` ou `kubectl describe statefulsets <nome-sts>` ou `kubectl describe sts <nome-sts>` detalhes do StatefulSet
+- `kubectl describe horizontalpodautoscaler <nome-hpa>` ou `kubectl describe horizontalpodautoscalers <nome-hpa>` ou `kubectl describe hpa <nome-hpa>` detalhes do HorizontalPodAutoscaler
 - `kubectl rollout history deployment <nome-deployment>` lista histórico de alterações
 - `kubectl apply -f <nome-arquivo>.yaml/.json --record` aplica arquivo para criar POD de maneira declarativa, armazenando comando no histórico de alterações do Deployment
 - `kubectl annotate deployment <nome-deployment> kubernetes.io/change-cause="<mensagem>"` anota alterações no histórico
